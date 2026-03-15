@@ -1,0 +1,25 @@
+name: Refresh ASN data
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v1
+
+      - name: Run build
+        run: bun build.js
+
+      - name: Commit and push
+        run: |
+          git config user.email "bot@users.noreply.github.com"
+          git config user.name "asn-bot"
+          git add asn/ logos/ last_run.txt
+          git diff --staged --quiet || git commit -m "build $(date -u +%Y-%m-%d)"
+          git push
