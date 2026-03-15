@@ -18,8 +18,8 @@ jobs:
 
       - name: Commit and push
         run: |
-          git config user.email "bot@users.noreply.github.com"
-          git config user.name "asn-bot"
+          git config user.email "70700766+tiagozip@users.noreply.github.com"
+          git config user.name "tiagobot"
           git add asn/ logos/ last_run.txt
           git diff --staged --quiet || git commit -m "build $(date -u +%Y-%m-%d)"
           git push
