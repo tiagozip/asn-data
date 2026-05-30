@@ -1,13 +1,7 @@
-# ASN data
-
-This repository serves JSON files and icons for ASNs, sourced from [peeringdb](https://peeringdb.com/) and updated every week with GitHub Actions.
-
-It's designed to be used as a simple CDN/API for getting ASN information and logos with little to no ratelimits.
-
-## Usage
+this page serves json files and icons for ASNs, sourced from [peeringdb](https://peeringdb.com/) and updated every week with GitHub Actions.
 
 ```
-https://tiagozip.github.io/asn-data/asn/13335.json
+GET https://tiagozip.github.io/asn-data/asn/13335.json
 ```
 
 ```json
@@ -63,9 +57,9 @@ https://tiagozip.github.io/asn-data/asn/13335.json
 }
 ```
 
-### Full-width logos
+### full-width logos
 
-You can request a full-width logo from the `logo` field:
+you can request a full-width logo from the `logo` field:
 
 ```js
 const logo_field = "http://testserver/m/logos_user_supplied/network-4224-70070349.png";
@@ -76,9 +70,9 @@ const logo_url = logo_field.replace(
 );
 ```
 
-### Favicons
+### favicons
 
-You can fetch a favicon of the ASN website URL by using the following URL:
+you can fetch a favicon of the ASN website URL by using the following URL:
 
 ```
 https://tiagozip.github.io/asn-data/logos/13335.png
